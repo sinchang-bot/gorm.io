@@ -7,8 +7,6 @@ name: hexo
 on:
   push:
     branches: [ master,action]
-  pull_request:
-    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,5 +24,5 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_REPOSITORY: go-gorm/gorm.io # The repository the action should deploy to.
-          BRANCH: gh-pages  # The branch the action should deploy to.
-          PUBLISH_DIR: ./public # The folder the action should deploy.
+          BRANCH: action  # The branch the action should deploy to.
+          PUBLISH_DIR: . # The folder the action should deploy.

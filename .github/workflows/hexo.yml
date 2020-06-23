@@ -6,7 +6,7 @@ name: hexo
 # events but only for the master branch
 on:
   push:
-    branches: [ master,action]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,7 +20,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - uses: solybum/hexo-deploy@master
+      - uses: Solybum/hexo-deploy@1.0
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_REPOSITORY: go-gorm/gorm.io # The repository the action should deploy to.
